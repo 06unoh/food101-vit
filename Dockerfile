@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir torch==2.6.0+cu124 torchvision==0.21.0+cu124 \
     -f https://download.pytorch.org/whl/torch_stable.html
 
-RUN pip install --no-cache-dir matplotlib==3.10.0 numpy==2.0.2 Pillow==11.2.1 scikit-learn==1.6.1
+RUN pip install --no-cache-dir matplotlib==3.10.0 numpy==2.0.2
 
 # 현재 프로젝트 전체 복사
 COPY . .
