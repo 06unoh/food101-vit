@@ -1,4 +1,4 @@
-# vision Transformer 모델을 활용한 Food101 이미지 분류
+# ViT 모델을 활용한 Food101 이미지 분류
 
 
 
@@ -6,18 +6,16 @@
 
 ```
 datasets/
-    cell_images/
-        Parasitized/
-        Uninfected/
-    malaria_dataset.py
+    food101/
+    transform_subset.py
 models/
-    custom_resnet.py
+    vit_model.py
 utils/
     data_utils.py
     train.py
     test.py
+    evaluate.py
     transforms.py
-    unzip.py
     visualize.py
 main.py
 requirements.txt

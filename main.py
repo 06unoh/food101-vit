@@ -5,7 +5,7 @@ from utils.evaluate import evaluate
 from utils.visualize import visualize_prediction
 from utils.transform import get_train_tf, get_test_tf, get_basic_tf
 from utils.data_utils import get_mean_std
-from datasets.dataset import TransformSubset
+from datasets.transform_subset import TransformSubset
 
 import torch
 import torchvision
@@ -18,7 +18,7 @@ import timm
 
 basic_tf=get_basic_tf()
 
-rawset=torchvision.datasets.Food101(root='/dataset',split='train',transform=None, download=True)
+rawset=torchvision.datasets.Food101(root='/dataset/food101',split='train',transform=None, download=True)
 basicset=TransformSubset(rawset, basic_tf)
 basicloader=DataLoader(basicset, 32, False)
 mean, std=get_mean_std(basicloader)
@@ -26,8 +26,8 @@ mean, std=get_mean_std(basicloader)
 train_tf=get_train_tf(mean, std)
 test_tf=get_test_tf(mean, std)
 
-trainset=torchvision.datasets.Food101(root='/dataset',split='train',transform=train_tf, download=True)
-testset=torchvision.datasets.Food101(root='/dataset',split='test',transform=test_tf, download=True)
+trainset=torchvision.datasets.Food101(root='/dataset/food101',split='train',transform=train_tf, download=True)
+testset=torchvision.datasets.Food101(root='/dataset/food101',split='test',transform=test_tf, download=True)
 
 trainloader=DataLoader(trainset, 32, True, num_workers=4, pin_memory=True)
 testloader=DataLoader(testset, 16, False, num_workers=2, pin_memory=True)
