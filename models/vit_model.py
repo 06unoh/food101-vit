@@ -81,5 +81,5 @@ class VisionTransformer(nn.Module):
     x=self.enc_block(x)
     x=self.norm(x)
     cls_output=x[:,0]
-    legits=self.head(cls_output)
-    return legits
+    logits=self.head(cls_output)
+    return logits
