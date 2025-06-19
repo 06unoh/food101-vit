@@ -41,34 +41,31 @@ python main.py
 ### ☝️ 도커 이미지 빌드
 
 ```
-docker build -t malaria-resnet-classifier .
+docker build -t food101-vit .
 ```
 
 ### ✌️ 컨테이너 실행
 
 ```
-docker run --rm malaria-resnet-classifier
+docker run --rm food101-vit
 ```
 
 ---
 
 ## 🔹 데이터셋
 
-Malaria Cell Images Dataset  
-Malaria Cell Images Dataset은 말라리아 감염 여부를 판별하기 위한 세포 이미지 데이터셋으로, 총 27,558장의 이미지로 구성되어있습니다. 각 이미지는 감염된 세포(Parasitized)와 비감염 세포(Uninfected)로 구분되어 있으며, 이진 분류 모델에 적합합니다.  
+Food 101  
+Food 101 데이터셋은 101개의 클래스로 분류된 음식 이미지 데이터셋으로 총 101,000장의 이미지로 구성되어있습니다. 각 클래스별 1,000장의 이미지로 구성되어 있으며, 다중 분류 모델에 적합합니다.  
   
-해당 작업물에는 `datasets/cell_images` 폴더에 **샘플 이미지**만 포함되어 있습니다.  
-전체 데이터셋은 아래 Kaggle 링크를 통해 직접 다운로드해 주세요.  
-🔗 https://www.kaggle.com/datasets/iarunava/cell-images-for-detecting-malaria
-
+데이터셋은 별도의 준비 없이, 실행 시 `torchvision` 라이브러리를 통해 자동으로 다운로드됩니다.
 ---
 
 ## 🔹 결과
 
-20회 에포크 학습 후, 정확도:
+사전학습된 모델 15 에포크 학습 후, 정확도:
 
 ```
-Test Accuracy: 96.21%
+Test Accuracy: 65.44%
 ```
 
 예측 결과 예시:
