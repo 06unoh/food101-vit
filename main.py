@@ -32,8 +32,8 @@ testset=torchvision.datasets.Food101(root='/dataset/food101',split='test',transf
 trainloader=DataLoader(trainset, 32, True, num_workers=4, pin_memory=True)
 testloader=DataLoader(testset, 16, False, num_workers=2, pin_memory=True)
 
-'''''''''''''''
-VAL LOADER SPLIT
+"""
+# Split train and validation sets (9:1)
 
 generator=torch.Generator().manual_seed(42)
 
@@ -46,7 +46,7 @@ testset=torchvision.datasets.Food101(root='/dataset', split='test', transform=te
 trainloader=DataLoader(trainset, 32, True, num_workers=4, pin_memory=True)
 valloader=DataLoader(valset, 16, False, num_workers=2, pin_memory=True)
 testloader=DataLoader(testset, 16, False, num_workers=2, pin_memory=True)
-'''''''''''''''
+"""
 
 if __name__=="__main__":
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -65,8 +65,8 @@ if __name__=="__main__":
     visualize_prediction(model, testloader, device, mean, std)
     
     
-    '''''''''''''''
-    SPLITED VAL LOADER 
+    """
+    # Split train and validation sets (9:1)
         
     device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model=timm.create_model('vit_base_patch16_224', pretrained=True, num_classes=101)
@@ -102,4 +102,4 @@ if __name__=="__main__":
         if early_stop_counter >= patience:
             print(f"Early stop: {epoch+1}")
             break
-    '''''''''''''''
+    """
