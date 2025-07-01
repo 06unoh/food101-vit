@@ -74,5 +74,5 @@ Test Accuracy: 65.44%
 ![샘플 예측 결과](images/prediction.png)
 
 ---
-📄 [Project Details](https://portfolio-unoh.site/work3)
-06unoh
+📄 [Work Details](https://portfolio-unoh.site/work3)  
+🛠 Developed by 06unoh 
